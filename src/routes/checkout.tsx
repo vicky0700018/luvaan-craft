@@ -45,13 +45,13 @@ function Checkout() {
   const placeOrder = (e: React.FormEvent) => {
     e.preventDefault();
     const next: Record<string, string> = {};
-    if (!form.name.trim()) next.name = "Enter your full name";
-    if (!/^\d{10}$/.test(form.phone.trim())) next.phone = "Enter a 10 digit phone number";
-    if (!/^\S+@\S+\.\S+$/.test(form.email.trim())) next.email = "Enter a valid email";
-    if (!form.address.trim()) next.address = "Enter your address";
-    if (!form.city.trim()) next.city = "Enter your city";
-    if (!form.state.trim()) next.state = "Enter your state";
-    if (!/^\d{6}$/.test(form.pincode.trim())) next.pincode = "Enter a 6 digit pincode";
+    if (!form.name.trim()) next['name'] = "Enter your full name";
+    if (!/^\d{10}$/.test(form.phone.trim())) next['phone'] = "Enter a 10 digit phone number";
+    if (!/^\S+@\S+\.\S+$/.test(form.email.trim())) next['email'] = "Enter a valid email";
+    if (!form.address.trim()) next['address'] = "Enter your address";
+    if (!form.city.trim()) next['city'] = "Enter your city";
+    if (!form.state.trim()) next['state'] = "Enter your state";
+    if (!/^\d{6}$/.test(form.pincode.trim())) next['pincode'] = "Enter a 6 digit pincode";
     setErrors(next);
     if (Object.keys(next).length > 0) {
       notify("Please fix the highlighted fields", "error");
